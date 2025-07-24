@@ -14,7 +14,8 @@ pipeline {
 
         stage('Run Ansible Playbook') {
             steps {
-                sh 'ansible-playbook ansible/playbook.yml -i ansible/inventory'
+sh 'ansible-playbook flask-ansible-cicd/ansible/playbook.yml -i flask-ansible-cicd/ansible/inventory'
+
             }
         }
     }
