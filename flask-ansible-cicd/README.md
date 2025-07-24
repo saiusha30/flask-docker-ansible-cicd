@@ -50,11 +50,22 @@ flask-docker-ansible-cicd/
 └── .gitignore
 
  Screenshots 
-✅ Jenkins Job Success
+## 📸 Screenshots
 
-✅ Flask App running on EC2
+### ✅ Jenkins Build Output 1
+![Jenkins Build 1](screenshots/jenkinsbuildoutput1.png)
 
-✅ Ansible Output Logs
+### ✅ Jenkins Build Output 2
+![Jenkins Build 2](screenshots/jenkinsbuildoutput2.PNG)
+
+### ✅ Jenkins Job Output
+![Jenkins Job Output](screenshots/jenkinjoboutput3.PNG)
+
+### 🐳 Docker Image and Container
+![Docker Image](screenshots/dockerimage,container.png)
+
+### 🌐 Accessing the Application
+![Access App](screenshots/accessapp.png)
 
 📝 How to Run This Project
 1. Setup Jenkins:
