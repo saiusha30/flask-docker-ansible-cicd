@@ -1,0 +1,36 @@
+---
+- name: Deploy Flask app with Docker
+  hosts: webserver
+  become: yes
+
+  tasks:
+    - name: Install Docker
+      yum:
+        name: docker
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Create app directory
+      file:
+        path: /home/ec2-user/flask-app
+        state: directory
+
+    - name: Copy Flask app code
+      copy:
+        src: ../flask-app/
+        dest: /home/ec2-user/flask-app/
+
+    - name: Build Docker image
+      command: docker build -t flask-app /home/ec2-user/flask-app/
+
+    - name: Remove existing container if any
+      shell: docker rm -f flask-container || true
+
+    - name: Run Docker container
+      command: docker run -d --name flask-container -p 5000:5000 flask-app
+
